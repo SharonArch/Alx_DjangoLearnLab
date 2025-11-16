@@ -1,7 +1,12 @@
-from django.urls import path
-from .views import list_books, LibraryDetailView
+from django.shortcuts import render
+from django.views.generic.detail import DetailView
+from .models import Author, Book, Library
 
-urlpatterns = [
-    path('list-books/', list_books, name='list_books'),
-    path('library/<int:pk>/', LibraryDetailView.as_view(), name='library_detail'),
-]
+def list_books(request):
+    books = Book.objects.all()
+    return render(request, "relationship_app/list_books.html", {"books": books})
+
+class LibraryDetailView(DetailView):
+    model = Library
+    template_name = "relationship_app/library_detail.html"
+    context_object_name = "library"
