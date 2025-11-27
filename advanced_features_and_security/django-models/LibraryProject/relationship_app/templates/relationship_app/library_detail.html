@@ -1,9 +1,0 @@
-<h1>{{ library.name }}</h1>
-<p>{{ library.location }}</p>
-
-<h2>Books in this Library</h2>
-<ul>
-    {% for book in library.book_set.all %}
-        <li>{{ book.title }} - {{ book.author }}</li>
-    {% endfor %}
-</ul>
