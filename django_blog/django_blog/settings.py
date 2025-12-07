@@ -41,6 +41,18 @@ INSTALLED_APPS = [
     'blog',
     'taggit',
 ]
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'blogdb',
+        'USER': 'root', 
+        'PASSWORD': '2027@dove',
+        'HOST': 'localhost',
+        'PORT': '3306',
+
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
